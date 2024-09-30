@@ -1,0 +1,7 @@
+.focus{
+  border: 1.5px solid  white;
+}
+
+.navbar a.active{
+  color: white;
+}

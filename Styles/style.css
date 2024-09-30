@@ -1,0 +1,482 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #1f1f1f;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+header {
+  color: white;
+  background: #1f1f1f;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .left {
+  margin-left: 20px;
+}
+
+.header .left h3 {
+  font-weight: 500;
+}
+
+.header .mid {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+  background-color: rgb(45, 45, 45);
+  border-radius: 30px;
+}
+
+.header .mid:hover i {
+  color: white;
+  transition: color 0.2s;
+}
+
+.header .mid:hover {
+  background-color: rgb(52, 52, 52);
+  transition: background 0.2s;
+}
+
+.header .mid input {
+  width: 400px;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  color: rgb(254, 254, 254);
+  font-size: 14px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.header .mid input::placeholder {
+  color: rgb(179, 179, 179);
+}
+
+.header .mid i {
+  color: rgb(179, 179, 179);
+  font-size: 17px;
+}
+
+.header .right {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.header .right .log-in {
+  background: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.header .right .sign-up {
+  background: transparent;
+  color: rgb(187, 187, 187);
+  font-weight: 600;
+  border: none;
+  padding: 12px 15px 12px 0px;
+  cursor: pointer;
+}
+
+.header .right .log-in:hover {
+  transform: scale(1.05);
+  transition: all 0.1s;
+}
+
+.header .right .sign-up:hover {
+  color: white;
+  transform: scale(1.05);
+  transition: all 0.1s;
+}
+
+.albums {
+  width: 78vw;
+  height: calc(100vh - 60px);
+  padding: 15px 25px 10px 25px;
+  overflow-y: scroll;
+  cursor: pointer;
+}
+
+.albums .main-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 75px 10px;
+}
+
+.albums .main-area .cover {
+  width: 100%;
+  height: 250px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cover h2{
+  position: absolute;
+  color: white;
+  font-size: 60px;
+  top: 50%;
+  left: 15px;
+}
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-area {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 20px;
+}
+
+.artist-area .artist {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.artist-area .artist:hover {
+  background: rgba(52, 52, 52, 0.5);
+  transition: background 0.15s;
+}
+
+.artist-area .artist .artist-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.artist-area .artist .artist-photo img {
+  width: 140px;
+  object-fit: cover;
+}
+
+.artist-area .artist .artist-details {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  padding: 6px 8px;
+}
+
+.artist-area .artist .artist-details h4 {
+  color: rgb(241, 241, 241);
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.artist-area .artist .artist-details h5 {
+  color: rgb(202, 202, 202);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.artist-area-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.artist-area .no-result h2 {
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.library {
+  width: 22vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  cursor: pointer;
+}
+
+.library .navbar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding: 6px 12px;
+  margin-bottom: 5px;
+}
+
+.library .navbar a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  color: rgb(202, 202, 202);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.library .main-area {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.library .main-area .artist {
+  width: 100%;
+  height: 74px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 18px;
+  padding: 12px;
+}
+
+.library .main-area .artist .img-box {
+  height: 50px;
+  width: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.library .main-area .artist .name {
+  flex: 1;
+}
+
+.library .main-area .artist .img-box img {
+  width: 50px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.library .main-area .artist .name h4 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.library .main-area .songs-container {
+  width: 100%;
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px 0 75px 0;
+  overflow-y: scroll;
+}
+
+.library .main-area .songs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.library .main-area .songs:hover {
+  background: rgba(52, 52, 52, 0.5);
+  transition: background 0.15s;
+}
+
+.library .main-area .songs .img-box {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.library .main-area .songs .img-box img {
+  width: 30px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.library .main-area .songs .song-name {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  flex: 1;
+  padding: 4px 0px 4px 8px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.library .main-area .songs .play {
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library .main-area .songs i {
+  color: rgb(206, 205, 205);
+  font-size: 12px;
+}
+
+.playbar {
+  background: #24242445;
+  backdrop-filter: blur(25px);
+  width: 100vw;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.playbar .song-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 25%;
+  padding: 5px 0 5px 25px;
+  cursor: pointer;
+}
+
+.playbar .song-details .playbar-img {
+  background: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.playbar .song-details .playbar-img img {
+  width: 50px;
+}
+
+.playbar .song-details .song-data {
+  flex: 1;
+}
+
+.playbar .song-details h4 {
+  color: rgb(241, 241, 241);
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.playbar .song-details h5 {
+  color: rgb(202, 202, 202);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.playbar .seekbar {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.playbar .seekbar .play-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0 0 0;
+}
+
+.playbar .seekbar i {
+  color: white;
+  cursor: pointer;
+}
+
+.playbar .seekbar .seek-container {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.playbar .seekbar .seek-container span {
+  display: block;
+  width: 80%;
+  background: rgb(130, 130, 130);
+  height: 3.5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.playbar .seekbar .seek-container span .progress {
+  display: block;
+  width: 0%;
+  background: white;
+  height: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: width 0.15s ease-in-out;
+}
+
+.playbar .seekbar .seek-container h5 {
+  color: rgb(241, 241, 241);
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.playbar .volume {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playbar .volume .volume-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.volume-container .icon-box{
+  width: 25px;
+}
+.volume-container i{
+  cursor: pointer;
+}
